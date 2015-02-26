@@ -1,4 +1,6 @@
-# C-Docker-Test
+# docker-db_bootstrap
+
+Example of how to bootstrap a MySQL database with a .sql file while using docker-compose.
 
 ## Instructions
 
