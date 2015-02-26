@@ -30,7 +30,7 @@ Example of how to bootstrap a MySQL database with a .sql file while using docker
 ### Getting a list of environment variables from the db container
   - Start the docker containers using `docker-compose up` as seen above
   - Manually run a docker container with the following command:
-    - `docker run --rm --link cdockertest_db_1:db mysql:latest env`
+    - `docker run --rm --link dockerdbbootstrap_db_1:db mysql:latest env`
 
 ### Bootstrapping an empty database
   - If you just want an empty database, the `mysql` image can already do that for you.  Utilize the commented out variables in the `docker-compose.yml` (`MYSQL_DATABASE`, `MYSQL_USER`, and `MYSQL_PASSWORD`).  You should then comment out the `bootstrap` section of the `docker-compose.yml` file so that the `bootstrap` container doesn't run unless you still want to bootstrap data into the empty database.
