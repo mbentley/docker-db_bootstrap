@@ -1,0 +1,22 @@
+web:
+  build: .
+  links:
+   - db
+  ports:
+   - "8080:8080"
+bootstrap:
+  build: bootstrap
+  environment:
+   - "SQLFILE=mysqlsampledatabase.sql"
+  links:
+   - db
+db:
+  image: mysql:latest
+  environment:
+   - "MYSQL_ROOT_PASSWORD=demo"
+### the next three variables are optional but can be used to create an empty db with the specified user having GRANT ALL access
+#   - "MYSQL_DATABASE=mydbname"
+#   - "MYSQL_USER=myusername"
+#   - "MYSQL_PASSWORD=mypassword"
+  expose:
+   - 3306
