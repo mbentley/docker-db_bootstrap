@@ -21,12 +21,14 @@ app.get('/', function (req, res) {
         }
         else{
           res.send('Error while performing Query.');
+          console.log('DB Query - ERROR');
         }
       });
       connection.release();
     }
     else{
       res.send('Error connecting to the database.');
+      console.log('DB connect - ERROR');
     }
   });
 });
