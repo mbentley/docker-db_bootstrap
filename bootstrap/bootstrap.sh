@@ -11,6 +11,13 @@ then
   exec "$@"
 fi
 
+# check to make sure the SQLFILE environment variable is defined
+if [ -z ${SQLFILE} ]
+then
+  echo "The environment variable SQLFILE is undefined; exiting"
+  exit 1
+fi
+
 # check to make sure there is a .sql file specified to import
 if [ ! -f /${SQLFILE} ]
 then
