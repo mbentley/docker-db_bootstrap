@@ -27,6 +27,9 @@ Example of how to bootstrap a MySQL database with a .sql file while using docker
   - To remove the docker containers created by docker-compose, use `docker-compose rm -v`
     - The `-v` is important as extra volumes are added by the MySQL docker image so `-v` removes them
 
+  - To rebuild the docker images, use `docker-compose build`
+    - This is required if you modify your application code or your .sql file for bootstrapping since they are included in the images
+
 ### Getting a list of environment variables from the db container
   - Start the docker containers using `docker-compose up` as seen above
   - Manually run a docker container with the following command:
